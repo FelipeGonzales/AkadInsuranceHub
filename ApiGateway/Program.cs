@@ -6,6 +6,7 @@ using Ocelot.Middleware;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("http://0.0.0.0:5006");
 
 // 🔹 Configuração do Ocelot
 builder.Services.AddOcelot();

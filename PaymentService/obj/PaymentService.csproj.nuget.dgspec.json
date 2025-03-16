@@ -10,21 +10,21 @@
         "projectUniqueName": "C:\\Users\\felip\\AkadInsuranceHub\\AkadInsuranceHub.Shared\\AkadInsuranceHub.Shared.csproj",
         "projectName": "AkadInsuranceHub.Shared",
         "projectPath": "C:\\Users\\felip\\AkadInsuranceHub\\AkadInsuranceHub.Shared\\AkadInsuranceHub.Shared.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\alefe\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\felip\\AkadInsuranceHub\\AkadInsuranceHub.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alefe\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -59,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -69,21 +68,21 @@
         "projectUniqueName": "C:\\Users\\felip\\AkadInsuranceHub\\PaymentService\\PaymentService.csproj",
         "projectName": "PaymentService",
         "projectPath": "C:\\Users\\felip\\AkadInsuranceHub\\PaymentService\\PaymentService.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\alefe\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\felip\\AkadInsuranceHub\\PaymentService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alefe\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Users\\felip\\AkadInsuranceHub\\AkadInsuranceHub.Shared\\AkadInsuranceHub.Shared.csproj": {
                 "projectPath": "C:\\Users\\felip\\AkadInsuranceHub\\AkadInsuranceHub.Shared\\AkadInsuranceHub.Shared.csproj"
@@ -100,12 +99,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "MassTransit": {
               "target": "Package",
@@ -117,7 +115,7 @@
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.2, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -157,7 +155,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

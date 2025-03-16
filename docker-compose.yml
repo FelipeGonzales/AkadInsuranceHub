@@ -1,0 +1,90 @@
+version: "3.8"
+
+services:
+  apigateway:
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    container_name: apigateway
+    restart: always
+    ports:
+      - "5006:5006"
+    depends_on:
+      - customerservice
+      - policyservice
+      - paymentservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  customerservice:
+    build:
+      context: .
+      dockerfile: CustomerService/Dockerfile
+    container_name: customerservice
+    restart: always
+    ports:
+      - "5048:5048"
+    depends_on:
+      - postgres
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  policyservice:
+    build:
+      context: .
+      dockerfile: PolicyService/Dockerfile
+    container_name: policyservice
+    restart: always
+    ports:
+      - "5058:5058"
+    depends_on:
+      - postgres
+      - rabbitmq
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RabbitMQ__Host=rabbitmq
+
+  paymentservice:
+    build:
+      context: .
+      dockerfile: PaymentService/Dockerfile
+    container_name: paymentservice
+    restart: always
+    ports:
+      - "5247:5247"
+    depends_on:
+      - postgres
+      - rabbitmq
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RabbitMQ__Host=rabbitmq
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: akad_insurance
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+volumes:
+  pgdata:
