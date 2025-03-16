@@ -1,28 +1,20 @@
-# 1️⃣ Fase de Build
+# Fase de build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia apenas os arquivos do projeto antes do restore
 COPY ["PolicyService/PolicyService.csproj", "PolicyService/"]
 COPY ["AkadInsuranceHub.Shared/AkadInsuranceHub.Shared.csproj", "AkadInsuranceHub.Shared/"]
 
-# Restaura as dependências
-WORKDIR /src/PolicyService
-RUN dotnet restore
+RUN dotnet restore "PolicyService/PolicyService.csproj"
 
-# Copia o restante dos arquivos
-COPY . .
-
-# Compila e publica a aplicação
+COPY PolicyService/. PolicyService/
+COPY AkadInsuranceHub.Shared/. AkadInsuranceHub.Shared/
+WORKDIR "/src/PolicyService"
 RUN dotnet publish -c Release -o /app/publish
 
-# 2️⃣ Fase de Runtime
+# Fase de runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-
-# Expõe a porta correta do PolicyService
 EXPOSE 5058
-
-# Comando de entrada
 ENTRYPOINT ["dotnet", "PolicyService.dll"]
