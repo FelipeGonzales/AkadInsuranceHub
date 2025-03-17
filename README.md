@@ -80,13 +80,13 @@ docker-compose up -d
 🔹 **Fase 1 - Configuração da Estrutura**
   - [x] Criar Microserviços (Clientes, Apólices, Pagamentos)
   - [x] Configurar API Gateway
-  - [x] Configurar Docker e Docker Compose  
+  - [x] Configurar Docker e Docker Compose
+  - [x] Adicionar Mensageria com RabbitMQ
  
 🔹 **Fase 2 - Desenvolvimento do Backend**
   - [ ] Implementar IdentityServer4 para Autenticação
   - [ ] Criar Modelos de Domínio (DDD)
   - [ ] Implementar CQRS com MediatR
-  - [ ] Adicionar Mensageria com RabbitMQ
   - [ ] Criar Testes Unitários e Integração  
  
 🔹 **Fase 3 - Desenvolvimento do Frontend**
