@@ -15,6 +15,7 @@ services:
       - paymentservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5006
 
   customerservice:
     build:
@@ -29,6 +30,7 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5048
 
   policyservice:
     build:
@@ -44,6 +46,7 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5058
       - RabbitMQ__Host=rabbitmq
 
   paymentservice:
@@ -60,6 +63,7 @@ services:
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=akad_insurance;Username=admin;Password=admin
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5247
       - RabbitMQ__Host=rabbitmq
 
   postgres:

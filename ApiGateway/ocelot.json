@@ -4,7 +4,7 @@
         "DownstreamPathTemplate": "/api/customer",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "localhost", "Port": 5048 }
+          { "Host": "customerservice", "Port": 5048 }
         ],
         "UpstreamPathTemplate": "/customers",
         "UpstreamHttpMethod": ["Get", "Post"]
@@ -13,7 +13,7 @@
         "DownstreamPathTemplate": "/api/policy",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "localhost", "Port": 5058 }
+          { "Host": "policyservice", "Port": 5058 }
         ],
         "UpstreamPathTemplate": "/policies",
         "UpstreamHttpMethod": ["Get", "Post"]
@@ -22,7 +22,7 @@
         "DownstreamPathTemplate": "/api/payment",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "localhost", "Port": 5247 }
+          { "Host": "paymentservice", "Port": 5247 }
         ],
         "UpstreamPathTemplate": "/payments",
         "UpstreamHttpMethod": ["Get", "Post"]

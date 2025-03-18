@@ -1,0 +1,16 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Name": "CustomerService",
+      "Url": "http://customerservice:5048/swagger/v1/swagger.json"
+    },
+    {
+      "Name": "PolicyService",
+      "Url": "http://policyservice:5058/swagger/v1/swagger.json"
+    },
+    {
+      "Name": "PaymentService",
+      "Url": "http://paymentservice:5247/swagger/v1/swagger.json"
+    }
+  ]
+}
